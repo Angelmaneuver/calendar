@@ -10,6 +10,7 @@ This is a Übersicht widget that displays your calendar. It allows you to displa
 
 ## Prerequisites
  - [Übersicht](http://tracesof.net/uebersicht/)
+ - Mac computers with Apple silicon (Because of build environment for icc)
  - Calendar Access Authorization
 
 ## Getting Started

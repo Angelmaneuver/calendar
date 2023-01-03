@@ -6,7 +6,7 @@ import * as Language  from './lib/languages';
 const LANGUAGE                = Language.EN;
 
 const HOLIDAY_CALENDAR_TITLE  = '';
-const CALENDAR_RANGE          = (() => {
+const CALENDAR_RANGE_SETTER   = (() => {
 	const today = new Date();
 
 	today.setHours(0);
@@ -26,7 +26,8 @@ const CALENDAR_RANGE          = (() => {
 		START: start,
 		END:   end,
 	};
-})();
+});
+const CALENDAR_RANGE          = CALENDAR_RANGE_SETTER();
 
 const NORMAL_WIDTH            = '30em';
 const MINIMIZE_WIDTH          = '30em';
@@ -176,6 +177,8 @@ export const render           = (props, dispatch) => {
 }
 
 function reload(type, dispatch) {
+	CALENDAR_RANGE_SETTER();
+
 	run(
 		command
 	).then(

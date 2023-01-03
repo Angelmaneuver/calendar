@@ -27,58 +27,6 @@ const Toolbar = ({
 		cursor:        'pointer',
 	};
 
-	// let   index   = 1;
-	// let   options = [];
-
-	// outline.list.forEach((date) => {
-	// 	const start     = index;
-	// 	const temporary = date.tasks.map((task) => {
-	// 		const value = outlineFormat.TASK.replace('$TASK', task);
-
-	// 		index++;
-
-	// 		return (
-	// 			<option
-	// 				key   = { index }
-	// 				value = { index }
-	// 			>
-	// 				{ value }
-	// 			</option>
-	// 		);
-	// 	});
-
-	// 	const headline = outlineFormat.DAY
-	// 						.replace('$DATE',  date.date)
-	// 						.replace('$TASKS', date.tasks.length);
-
-	// 	temporary.unshift((
-	// 		<option
-	// 			key   = { start }
-	// 			value = { start }
-	// 		>
-	// 			{ headline }
-	// 		</option>
-	// 	));
-
-	// 	index++;
-
-	// 	options = options.concat(temporary);
-	// });
-
-	// options.unshift((
-	// 	<option
-	// 		key   = { 0 }
-	// 		value = { 0 }
-	// 	>
-	// 		{
-	// 			outlineFormat.SUMMARY
-	// 				.replace('$RED',    outline.number.red)
-	// 				.replace('$YELLOW', outline.number.yellow)
-	// 				.replace('$BLUE',   outline.number.blue)
-	// 		}
-	// 	</option>
-	// ));
-
 	return (
 		<Atoms.Row
 			className = { `${ className ? className : '' } ${baseStyle(style)}`.trim() }
@@ -89,22 +37,6 @@ const Toolbar = ({
 					flexGrow:   '9',
 				}}
 			>
-				{/* {( onClickMaximize ) ? (
-					<React.Fragment>
-						<div
-							style     = {{
-								...frame,
-								width: '100%',
-							}}
-						>
-							<select
-								className = { `${selectStyle(Atoms.Style.fontColor)} ${outline.color}` }
-							>
-								{ options }
-							</select>
-						</div>
-					</React.Fragment>
-				) : ('')} */}
 			</Atoms.Row>
 			<Atoms.Row
 				style = {{
