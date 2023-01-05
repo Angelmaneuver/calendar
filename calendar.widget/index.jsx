@@ -177,7 +177,10 @@ export const render           = (props, dispatch) => {
 }
 
 function reload(type, dispatch) {
-	CALENDAR_RANGE_SETTER();
+	const range = CALENDAR_RANGE_SETTER();
+
+	CALENDAR_RANGE.START = range.START;
+	CALENDAR_RANGE.END   = range.END;
 
 	run(
 		command
