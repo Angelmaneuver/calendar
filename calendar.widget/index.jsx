@@ -101,9 +101,13 @@ export const updateState      = (event, previousState) => {
 	}
 
 	const type     = (() => {
-		const state = { ...previousState, ...event };
+		if ('type' in event && 'UB/COMMAND_RAN' === event.type) {
+			return STATUS.STARTUP === previousState.type ? STATUS.ACTIVE : previousState.type;
+		} else {
+			const state = { ...previousState, ...event };
 
-		return (STATUS.ACTIVE !== state.type && STATUS.MINIMIZE !== state.type) ? STATUS.ACTIVE : state.type;
+			return state.type;
+		}
 	})();
 
 	const calendar = new Calendar(
